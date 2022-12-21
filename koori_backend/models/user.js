@@ -2,6 +2,7 @@
 const {
     Model
 } = require('sequelize');
+const passwordgenerator = require("../middleware/password_generator")
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
         /**
@@ -26,7 +27,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            defaultValue: passwordgenerator.password
         },
         profession: {
             type: DataTypes.STRING,

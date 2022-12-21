@@ -96,12 +96,10 @@ const login = async(req, res) => {
                     users.forEach(users => {
                         if (users.email === user.email) {
                             userId = users.dataValues.id;
-                            // console.log("userId", userId, "\n", "email", user.email);
                         }
                         return userId
                     })
                     currentUser = userId
-                        // console.log("userNow1", currentUser);
                     let token = jwt.sign({ id: currentUser }, process.env.secretKey, {
                         algorithm: "HS256",
                         expiresIn: process.env.jwtExpirySeconds,
