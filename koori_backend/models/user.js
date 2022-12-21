@@ -47,11 +47,15 @@ module.exports = (sequelize, DataTypes) => {
         avatar: {
             type: DataTypes.BLOB,
             allowNull: false,
-            defaultValue: ["USER"]
+            get() {
+                return this.getDataValue('avatar').toString('utf8'); // or whatever encoding is right
+            },
+
         },
         roles: {
             type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: false
+            allowNull: false,
+            defaultValue: ["USER"]
         },
         etat: {
             type: DataTypes.BOOLEAN,

@@ -1,5 +1,7 @@
-let userAllRoutes = require('../routes/userRoute')
+let userAllRoutes = require('./userRoutes');
+let authAllRoutes = require('./authRoutes')
 
 module.exports = [
-    userAllRoutes
+    userAllRoutes,
+    authAllRoutes
 ]

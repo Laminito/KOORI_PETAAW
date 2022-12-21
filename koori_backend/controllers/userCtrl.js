@@ -4,7 +4,6 @@ const { Op } = require("sequelize");
 
 
 module.exports = {
-
     getAllUsers: (req, res) => {
         var limit = parseInt(req.query.limit);
         var offset = parseInt(req.query.offset);
@@ -42,5 +41,5 @@ module.exports = {
                 return res.status(500).json({ 'error': 'Erreur de récupération' + err })
             })
 
-    }
+    },
 }

@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:19
 RUN mkdir kooriBackend
 COPY . ./kooriBackend
 WORKDIR /kooriBackend/.
