@@ -5,8 +5,8 @@ const { Op } = require("sequelize");
 
 module.exports = {
     getAllUsers: (req, res) => {
-        var limit = parseInt(req.query.limit);
-        var offset = parseInt(req.query.offset);
+        const limit = parseInt(req.query.limit);
+        const offset = parseInt(req.query.offset);
         models.User.findAll({
 
                 order: [

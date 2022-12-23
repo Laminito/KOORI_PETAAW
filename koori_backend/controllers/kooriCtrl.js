@@ -25,18 +25,15 @@ module.exports = {
 
 	updateKoori: (req, res) => {
 
-		let id = req.params.id;
+		let idKoori = parseInt(req.params.id);
 
 		models.Koori.findOne({
-			where : {id:id}
+			where : {id: idKoori}
 		}).then(koori => {
 			if(koori){
 				koori.update({...req.body})
 				.then((updatedKoori) => {
-					return res.status(200).json({
-						message: 'Koori updated successfully !',
-						updatedKoori
-					})
+					return res.status(200).json({updatedKoori})
 				})
 			}else{
 				return res.status(500).json({message: 'Koori not found !'})

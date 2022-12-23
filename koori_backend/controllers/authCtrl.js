@@ -70,7 +70,6 @@ const signup = async(req, res) => {
     }
 };
 
-
 //login authentication
 
 const login = async(req, res) => {
@@ -96,7 +95,6 @@ const login = async(req, res) => {
                     users.forEach(users => {
                         if (users.email === user.email) {
                             userId = users.dataValues.id;
-                            // console.log("userId", userId, "\n", "email", user.email);
                         }
                         return userId
                     })
