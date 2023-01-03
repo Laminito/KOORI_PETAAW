@@ -9,9 +9,7 @@ module.exports = {
         var offset = parseInt(req.query.offset);
         models.User.findAll({
 
-                order: [
-                    ['id', 'ASC'],
-                ],
+                order: [['id', 'ASC']],
                 attributes: [
                     'id',
                     'nomComplet',

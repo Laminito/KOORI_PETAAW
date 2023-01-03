@@ -1,4 +1,4 @@
-    const { Client } = require('pg');
+/*     const { Client } = require('pg');
 
     const client = new Client({
         user: "root",
@@ -13,4 +13,4 @@
         .catch(err => console.error('connection error', err.stack))
 
 
-    module.exports = client;
+    module.exports = client; */

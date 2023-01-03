@@ -13,6 +13,7 @@ const swaggerFile = require('./swagger_output.json');
 const rateLimit = require('express-rate-limit')
 const errorHandler = require('./middleware/error')
 const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+const socket = require('socket.io')
 
 // Rate limiting
 const limiter = rateLimit({
@@ -28,6 +29,8 @@ server.use(limiter);
 server.set('trust proxy', 1);
 // Error handler middleware
 server.use(errorHandler)
+
+//permpet de stocker des données de maniéres temporaires
 server.use(cookieParser())
 
 server.use((req, res, next) => {
@@ -86,4 +89,4 @@ server.use(function(req, res, next) {
 server.listen(PORT, () => console.log(`Server is connected on ${PORT}`))
 model.sequelize.sync({ force: false }).then(() => {
     console.log("model has been re sync")
-})
+});
